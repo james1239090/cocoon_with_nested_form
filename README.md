@@ -1,24 +1,23 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
+This is an example using [cocoon](https://github.com/nathanvda/cocoon) to dynamic add with two nested options (Color and Dimension).
 
-* Ruby version
 
-* System dependencies
+* Rails version : 5.0.2
 
-* Configuration
+* Ruby version : 2.3.0
 
-* Database creation
+* Gem : [cocoon](https://github.com/nathanvda/cocoon)
 
-* Database initialization
+* How to run
 
-* How to run the test suite
+  1. fork
 
-* Services (job queues, cache servers, search engines, etc.)
+  2. ```$ bundle install```
 
-* Deployment instructions
+  3. ```$ rake db:migrate```
 
-* ...
+  4. ```$ rake db:seed```
+
+  Have fun.
