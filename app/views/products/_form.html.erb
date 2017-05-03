@@ -1,0 +1,21 @@
+<%= simple_form_for @product do |f| %>
+  <%= f.input :name %>
+  <div id="options">
+    <div class="row-fluid">
+      <%= link_to_add_association 'new option', f, :product_options,
+          'data-association-insertion-method' => 'append',
+          'data-association-insertion-node' => 'table',
+          class: "btn btn-danger pull-right"
+         %>
+      <br>
+      <table class="table table-bordered">
+        <tbody>
+          <%= f.simple_fields_for :product_options do |product_option| %>
+            <%= render 'product_option_fields', :f => product_option %>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <%= f.submit "submit" %>
+<% end %>
