@@ -5,3 +5,15 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+
+
+Color.destroy_all
+Dimension.destroy_all
+
+Color.create(name:'Red')
+Color.create(name:'White')
+Color.create(name:'Black')
+Dimension.create(name:'M')
+Dimension.create(name:'L')
+Dimension.create(name:'XL')
