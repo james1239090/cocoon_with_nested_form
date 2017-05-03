@@ -1,0 +1,30 @@
+<h2>Product List</h2>
+<%= link_to("New Product", new_product_path, class: "btn btn-success pull-right") %>
+<table class="table table-bordered">
+  <thead>
+    <th>#</th>
+    <th>Name</th>
+    <th>Color</th>
+    <th>Dimension</th>
+    <th>Action</th>
+  </thead>
+  <tbody>
+    <% @products.each do |product| %>
+      <tr>
+        <td><%= product.id %></td>
+        <td><%= link_to(product.name, edit_product_path(product)) %></td>
+        <td>
+          <%= product.colors.group(:name).map{|c| c.name}.join("、") %>
+        </td>
+        <td>
+          <%= product.dimensions.group(:name).map{|c| c.name}.join("、") %>
+        </td>
+        <td>
+        <%= link_to product_path(product), method: :delete, class:"btn" do %>
+              <i class="fa fa-trash"></i>
+        <% end %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
